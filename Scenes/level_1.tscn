@@ -1,12 +1,92 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnj8w22ygbj1r"]
+[gd_scene load_steps=8 format=3 uid="uid://cnj8w22ygbj1r"]
 
-[ext_resource type="PackedScene" uid="uid://boqa40vxjpaw3" path="res://Scenes/fire.tscn" id="2_h84du"]
+[ext_resource type="Texture2D" uid="uid://bivkfo260wrbm" path="res://Assets/Quicksilver.png" id="2_swrsf"]
 [ext_resource type="PackedScene" uid="uid://d2crj8kvcoqtm" path="res://Scenes/interactable.tscn" id="2_w5cbi"]
+[ext_resource type="Texture2D" uid="uid://b0qf2rgfljtqm" path="res://Assets/air_rune.png" id="3_frdrl"]
+[ext_resource type="Texture2D" uid="uid://8g00j0b37so" path="res://Assets/earth_rune.png" id="4_o838h"]
+[ext_resource type="Texture2D" uid="uid://c82gabro1px5r" path="res://Assets/fire_rune.png" id="5_v7il5"]
+[ext_resource type="Texture2D" uid="uid://bynyj1vlggpur" path="res://Assets/water_rune.png" id="6_3j384"]
+
+[sub_resource type="Theme" id="Theme_xq02q"]
+Label/font_sizes/font_size = 80
 
 [node name="Level 1" type="Node2D"]
 
 [node name="Interactable" parent="." instance=ExtResource("2_w5cbi")]
 position = Vector2(880, 170)
 
-[node name="Fire" parent="." instance=ExtResource("2_h84du")]
-position = Vector2(823, 535)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_swrsf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_xq02q")
+theme_type_variation = &"HeaderLarge"
+text = "I"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_frdrl")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_xq02q")
+theme_type_variation = &"HeaderLarge"
+text = "I"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("4_o838h")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme = SubResource("Theme_xq02q")
+theme_type_variation = &"HeaderLarge"
+text = "I"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("5_v7il5")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme = SubResource("Theme_xq02q")
+theme_type_variation = &"HeaderLarge"
+text = "I"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("6_3j384")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme = SubResource("Theme_xq02q")
+theme_type_variation = &"HeaderLarge"
+text = "I"
