@@ -13,7 +13,6 @@ signal interactable_entered(interactable)
 signal interactable_exited(interactable)
 signal interactable_interacted(interactable)
 
-
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

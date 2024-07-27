@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnj8w22ygbj1r"]
+[gd_scene load_steps=3 format=3 uid="uid://cnj8w22ygbj1r"]
 
+[ext_resource type="PackedScene" uid="uid://boqa40vxjpaw3" path="res://Scenes/fire.tscn" id="2_h84du"]
 [ext_resource type="PackedScene" uid="uid://d2crj8kvcoqtm" path="res://Scenes/interactable.tscn" id="2_w5cbi"]
 
 [node name="Level 1" type="Node2D"]
 
 [node name="Interactable" parent="." instance=ExtResource("2_w5cbi")]
 position = Vector2(880, 170)
+
+[node name="Fire" parent="." instance=ExtResource("2_h84du")]
+position = Vector2(823, 535)

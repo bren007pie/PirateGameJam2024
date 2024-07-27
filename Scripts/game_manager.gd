@@ -8,15 +8,7 @@ extends Node
 }
 
 func _ready():
-	print(get_runes())
-	print(get_rune("air"))
-	add_rune("fire")
-	add_rune("fire", 2)
-	print(get_rune("fire"))
-	subtract_rune("fire", 3)
-	print(get_rune("fire"))
-	subtract_rune("fire", 1)
-	subtract_rune("fire")
+	pass
 
 func get_runes() -> Dictionary:
 	return runes
