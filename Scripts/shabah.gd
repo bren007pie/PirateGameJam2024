@@ -11,6 +11,7 @@ var current_interactable
 
 signal interactable_entered(interactable)
 signal interactable_exited(interactable)
+signal interactable_interacted(interactable)
 
 
 func _physics_process(delta):
@@ -43,3 +44,8 @@ func _physics_process(delta):
 		interactable_exited.emit(current_interactable)
 		current_interactable = null
 		print("undetection emitted")
+
+func _unhandled_input(event):
+	if event.is_action_pressed("Interact"):
+		if current_interactable:
+			interactable_interacted.emit(current_interactable)
