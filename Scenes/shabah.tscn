@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://igycso0rt3wf"]
 
-[ext_resource type="Script" path="res://shabah.gd" id="1_10yej"]
-[ext_resource type="Texture2D" uid="uid://qfe6cqiortnm" path="res://icon.svg" id="2_m6fos"]
+[ext_resource type="Script" path="res://Scripts/shabah.gd" id="1_674oa"]
+[ext_resource type="Texture2D" uid="uid://qfe6cqiortnm" path="res://icon.svg" id="2_hmlex"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hkgqt"]
 radius = 40.0
 
 [node name="Shabah" type="CharacterBody2D"]
-script = ExtResource("1_10yej")
+script = ExtResource("1_674oa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.640625, 0.640625)
-texture = ExtResource("2_m6fos")
+texture = ExtResource("2_hmlex")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hkgqt")
