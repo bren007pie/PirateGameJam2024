@@ -42,6 +42,10 @@ Down={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_5="Interactables"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
