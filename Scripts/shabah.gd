@@ -28,9 +28,9 @@ func _physics_process(delta):
 		velocity = velocity.normalized()*MAX_SPEED
 	
 	if velocity.length():
-		sprite_2d.rotation = velocity.angle() - deg_to_rad(90)
+		sprite_2d.rotation = velocity.angle()
 	
-	ray_cast_2d.rotation = sprite_2d.rotation
+	ray_cast_2d.rotation = sprite_2d.rotation - deg_to_rad(90)
 	
 	move_and_slide()
 	
