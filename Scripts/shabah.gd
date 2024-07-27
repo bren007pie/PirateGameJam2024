@@ -5,6 +5,13 @@ const MAX_SPEED = 300.0
 @onready var ray_cast_2d = $RayCast2D
 @onready var sprite_2d = $Sprite2D
 
+var interactable_detected = false
+
+var current_interactable
+
+signal interactable_entered(interactable)
+signal interactable_exited(interactable)
+
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -25,3 +32,14 @@ func _physics_process(delta):
 	ray_cast_2d.rotation = sprite_2d.rotation
 	
 	move_and_slide()
+	
+	if ray_cast_2d.is_colliding() and not interactable_detected:
+		interactable_detected = true
+		current_interactable = ray_cast_2d.get_collider()
+		interactable_entered.emit(current_interactable)
+		print("detection emitted")
+	elif not ray_cast_2d.is_colliding() and interactable_detected:
+		interactable_detected = false
+		interactable_exited.emit(current_interactable)
+		current_interactable = null
+		print("undetection emitted")

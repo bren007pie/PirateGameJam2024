@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2crj8kvcoqtm"]
+[gd_scene load_steps=5 format=3 uid="uid://d2crj8kvcoqtm"]
 
+[ext_resource type="Script" path="res://Scripts/interactable.gd" id="1_07lwp"]
 [ext_resource type="Texture2D" uid="uid://qfe6cqiortnm" path="res://icon.svg" id="1_gb5ed"]
+[ext_resource type="PackedScene" uid="uid://dfb5kidw8qp73" path="res://Scenes/TestBox.tscn" id="3_wo0xu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ux32t"]
 radius = 64.9384
@@ -8,6 +10,7 @@ radius = 64.9384
 [node name="Interactable" type="StaticBody2D"]
 collision_layer = 17
 collision_mask = 0
+script = ExtResource("1_07lwp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.541176, 0, 0, 1)
@@ -16,3 +19,6 @@ texture = ExtResource("1_gb5ed")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ux32t")
 debug_color = Color(0.968627, 0, 0.462745, 0.419608)
+
+[node name="TestBox" parent="." instance=ExtResource("3_wo0xu")]
+position = Vector2(72, -67)

@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/shabah.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Shabah="*res://Scenes/shabah.tscn"
+
 [dotnet]
 
 project/assembly_name="Pirate Game Jam 2024"

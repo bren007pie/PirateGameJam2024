@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnj8w22ygbj1r"]
+[gd_scene load_steps=2 format=3 uid="uid://cnj8w22ygbj1r"]
 
-[ext_resource type="PackedScene" uid="uid://igycso0rt3wf" path="res://Scenes/shabah.tscn" id="1_1130f"]
 [ext_resource type="PackedScene" uid="uid://d2crj8kvcoqtm" path="res://Scenes/interactable.tscn" id="2_w5cbi"]
 
 [node name="Level 1" type="Node2D"]
-
-[node name="Shabah" parent="." instance=ExtResource("1_1130f")]
-position = Vector2(486, 333)
 
 [node name="Interactable" parent="." instance=ExtResource("2_w5cbi")]
 position = Vector2(880, 170)
