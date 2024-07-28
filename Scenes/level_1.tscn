@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c3h2kg1tjqer2" path="res://Scenes/ui.tscn" id="2_pgxrt"]
 [ext_resource type="PackedScene" uid="uid://d2crj8kvcoqtm" path="res://Scenes/interactable.tscn" id="2_w5cbi"]
 [ext_resource type="Texture2D" uid="uid://b0qf2rgfljtqm" path="res://Assets/air_rune.png" id="3_frdrl"]
-[ext_resource type="PackedScene" path="res://Scenes/fire.tscn" id="3_vbv3g"]
+[ext_resource type="PackedScene" uid="uid://boqa40vxjpaw3" path="res://Scenes/fire.tscn" id="3_vbv3g"]
 [ext_resource type="Texture2D" uid="uid://8g00j0b37so" path="res://Assets/earth_rune.png" id="4_o838h"]
 [ext_resource type="Script" path="res://Scripts/Air Button.gd" id="5_l2xqj"]
 [ext_resource type="Texture2D" uid="uid://c82gabro1px5r" path="res://Assets/fire_rune.png" id="5_v7il5"]
@@ -38,7 +38,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Air Button" type="Button" parent="CookingUI/CookingUI/VBoxContainer"]
+[node name="Air Button" type="CheckBox" parent="CookingUI/CookingUI/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Water Button")
@@ -51,7 +51,7 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("5_l2xqj")
 
-[node name="Earth Button" type="Button" parent="CookingUI/CookingUI/VBoxContainer"]
+[node name="Earth Button" type="CheckBox" parent="CookingUI/CookingUI/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Air Button")
@@ -63,7 +63,7 @@ icon = ExtResource("4_o838h")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Fire Button" type="Button" parent="CookingUI/CookingUI/VBoxContainer"]
+[node name="Fire Button" type="CheckBox" parent="CookingUI/CookingUI/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Earth Button")
@@ -75,7 +75,7 @@ icon = ExtResource("5_v7il5")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Water Button" type="Button" parent="CookingUI/CookingUI/VBoxContainer"]
+[node name="Water Button" type="CheckBox" parent="CookingUI/CookingUI/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Fire Button")
