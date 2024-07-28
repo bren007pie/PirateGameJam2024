@@ -1,5 +1,8 @@
 extends Node
 signal runes_changed
+var is_cooking : bool = false
+
+@onready var canvas_layer = $CanvasLayer
 
 @onready var runes : Dictionary = {
 	"air" : 0,
@@ -25,3 +28,13 @@ func subtract_rune(rune_name:String, amount : int = 1):
 		runes_changed.emit()
 	else:
 		print_debug("YOU SUBTRACTED MORE RUNES THAN YOU HAVE, YOU FILTHY FUCK!")
+
+func open_cooking_menu():
+	is_cooking = true
+	get_tree().paused = true
+	canvas_layer.visible = true
+	
+func close_cooking_menu():
+	is_cooking = false
+	get_tree().paused = false
+	canvas_layer.visible = false
