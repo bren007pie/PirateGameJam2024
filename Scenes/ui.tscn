@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wgeh665g7gkn"]
+[gd_scene load_steps=8 format=3 uid="uid://c3h2kg1tjqer2"]
 
 [ext_resource type="Texture2D" uid="uid://bivkfo260wrbm" path="res://Assets/Quicksilver.png" id="1_0oqsj"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_ue502"]
