@@ -35,6 +35,7 @@ func subtract_rune(rune_name:String, amount : int = 1):
 		print_debug("YOU SUBTRACTED MORE RUNES THAN YOU HAVE, YOU FILTHY FUCK!")
 
 func open_cooking_menu_for_puzzle(puzzle : Node):
+	cooking_ui.update_puzzle(puzzle)
 	is_cooking = true
 	get_tree().paused = true
 	canvas_layer.visible = true

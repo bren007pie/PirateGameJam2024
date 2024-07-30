@@ -35,9 +35,14 @@ func _on_interactable_exited(interactable):
 	if interactable == self:
 		pass
 
+# Press puzzle/interact button
 func _on_interactable_interacted(interactable):
 	if interactable == self and puzzle_on:
-		pass
-		GameManager.add_rune("fire")
-		puzzle_on = false
-		$Sprite2D.modulate = Color.GREEN
+		GameManager.open_cooking_menu_for_puzzle(self)
+		#GameManager.add_rune("fire")
+		#puzzle_on = false
+		#$Sprite2D.modulate = Color.GREEN
+
+
+func evaluate_solution(runes : Dictionary) -> bool:
+	return false

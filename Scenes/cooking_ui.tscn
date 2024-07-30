@@ -114,5 +114,3 @@ icon = SubResource("ViewportTexture_e3his")
 [node name="Spacer2" type="Control" parent="CookingUI/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-
-[connection signal="pressed" from="CookingUI/VBoxContainer2/Cook Button" to="." method="_on_cook_button_pressed"]
