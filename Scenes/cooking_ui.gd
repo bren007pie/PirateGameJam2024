@@ -36,6 +36,21 @@ func _on_cook_button_pressed():
 func check_result():
 	if result:
 		
+		clear()
+		GameManager.close_cooking_menu()
+		
+	else:
+		GameManager.wrong_answer()
+
+
+
+
+func _on_exit_button_pressed():
+	clear()
+	GameManager.close_cooking_menu()
+
+func clear():
+	
 		runes = {
 				"air" : false,
 				"earth" : false,
@@ -47,9 +62,3 @@ func check_result():
 		earth_button.pressed = runes["earth"]
 		fire_button.pressed = runes["fire"]
 		water_button.pressed = runes["water"]
-		
-		GameManager.close_cooking_menu()
-	else:
-		GameManager.wrong_answer()
-
-

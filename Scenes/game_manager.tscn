@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dx1ho81iqf44f" path="res://Scenes/cooking_ui.tscn" id="3_6gu5c"]
 
 [node name="GameManager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_7lifi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -22,4 +23,5 @@ color = Color(0.176471, 0.176471, 0.176471, 0.705882)
 [node name="UI" parent="." instance=ExtResource("2_pib08")]
 
 [node name="CookingUI" parent="." instance=ExtResource("3_6gu5c")]
+layer = 3
 visible = false
