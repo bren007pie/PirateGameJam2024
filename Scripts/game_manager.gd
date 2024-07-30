@@ -57,6 +57,7 @@ func open_cooking_menu_for_puzzle(puzzle : Node):
 	canvas_layer.visible = true
 	ui.visible = false
 	cooking_ui.visible = true
+	cooking_ui.on_reveal()
 	
 func close_cooking_menu():
 	is_cooking = false

@@ -13,23 +13,14 @@ var result:bool = false
  	"fire" :  false,
 	"water" :  false }
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func update_puzzle(new_puzzle : Node):
 	puzzle = new_puzzle
 
 func _on_cook_button_pressed():
-	runes["air"] = air_button.pressed
-	runes["earth"] = earth_button.pressed
-	runes["fire"] = fire_button.pressed
-	runes["water"] = water_button.pressed
+	runes["air"] = air_button.button_pressed
+	runes["earth"] = earth_button.button_pressed
+	runes["fire"] = fire_button.button_pressed
+	runes["water"] = water_button.button_pressed
 	result = puzzle.evaluate_solution(runes)
 	check_result()
 
@@ -58,7 +49,10 @@ func clear():
 				"water" :  false }
 		
 		
-		air_button.pressed = runes["air"]
-		earth_button.pressed = runes["earth"]
-		fire_button.pressed = runes["fire"]
-		water_button.pressed = runes["water"]
+		air_button.button_pressed = runes["air"]
+		earth_button.button_pressed = runes["earth"]
+		fire_button.button_pressed = runes["fire"]
+		water_button.button_pressed = runes["water"]
+
+func on_reveal():
+	air_button.grab_focus()
