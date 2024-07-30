@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl2hhe5apmneb"
-path="res://.godot/imported/Quicksilver.webp-420fbee8d06d45ca00492945fed3c64a.ctex"
+uid="uid://ntwe48edmj"
+path="res://.godot/imported/cooking_pot_hot.png-1db307fe15d0cdfc3a62edbcdef26197.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Quicksilver.webp"
-dest_files=["res://.godot/imported/Quicksilver.webp-420fbee8d06d45ca00492945fed3c64a.ctex"]
+source_file="res://Assets/cooking_pot_hot.png"
+dest_files=["res://.godot/imported/cooking_pot_hot.png-1db307fe15d0cdfc3a62edbcdef26197.ctex"]
 
 [params]
 

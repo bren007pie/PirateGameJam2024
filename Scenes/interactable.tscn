@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2crj8kvcoqtm"]
 
 [ext_resource type="Script" path="res://Scripts/interactable.gd" id="1_07lwp"]
-[ext_resource type="Texture2D" uid="uid://bpr5rou46ncrs" path="res://Assets/Jamir.png" id="2_7rk1d"]
+[ext_resource type="Texture2D" uid="uid://vq84grxq5u17" path="res://Assets/Jamir_transparent.png" id="2_edhxd"]
 [ext_resource type="PackedScene" uid="uid://dfb5kidw8qp73" path="res://Scenes/TestBox.tscn" id="3_wo0xu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kruir"]
@@ -14,7 +14,7 @@ script = ExtResource("1_07lwp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.351318, 0.351317)
-texture = ExtResource("2_7rk1d")
+texture = ExtResource("2_edhxd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kruir")
