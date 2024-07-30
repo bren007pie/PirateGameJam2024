@@ -9,6 +9,7 @@ radius = 64.0703
 [node name="Fire" type="StaticBody2D"]
 collision_layer = 17
 script = ExtResource("1_oiat7")
+fire_given = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
