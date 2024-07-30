@@ -1,18 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnj8w22ygbj1r"]
+[gd_scene load_steps=3 format=3 uid="uid://cnj8w22ygbj1r"]
 
-[ext_resource type="PackedScene" uid="uid://wgeh665g7gkn" path="res://Scenes/ui.tscn" id="2_pgxrt"]
 [ext_resource type="PackedScene" uid="uid://d2crj8kvcoqtm" path="res://Scenes/interactable.tscn" id="2_w5cbi"]
 [ext_resource type="PackedScene" uid="uid://boqa40vxjpaw3" path="res://Scenes/fire.tscn" id="3_vbv3g"]
-[ext_resource type="PackedScene" uid="uid://dx1ho81iqf44f" path="res://Scenes/cooking_ui.tscn" id="4_imbvw"]
 
 [node name="Level 1" type="Node2D"]
 
 [node name="Interactable" parent="." instance=ExtResource("2_w5cbi")]
 position = Vector2(880, 170)
 
-[node name="UI" parent="." instance=ExtResource("2_pgxrt")]
-
 [node name="Fire" parent="." instance=ExtResource("3_vbv3g")]
 position = Vector2(596, 490)
-
-[node name="CookingUI" parent="." instance=ExtResource("4_imbvw")]
