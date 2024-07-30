@@ -1,13 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnj8w22ygbj1r"]
+[gd_scene load_steps=9 format=3 uid="uid://dx1ho81iqf44f"]
 
-[ext_resource type="PackedScene" uid="uid://wgeh665g7gkn" path="res://Scenes/ui.tscn" id="2_pgxrt"]
-[ext_resource type="PackedScene" uid="uid://d2crj8kvcoqtm" path="res://Scenes/interactable.tscn" id="2_w5cbi"]
-[ext_resource type="Texture2D" uid="uid://b0qf2rgfljtqm" path="res://Assets/air_rune.png" id="3_frdrl"]
-[ext_resource type="PackedScene" uid="uid://boqa40vxjpaw3" path="res://Scenes/fire.tscn" id="3_vbv3g"]
-[ext_resource type="Texture2D" uid="uid://8g00j0b37so" path="res://Assets/earth_rune.png" id="4_o838h"]
-[ext_resource type="Script" path="res://Scripts/Air Button.gd" id="5_l2xqj"]
-[ext_resource type="Texture2D" uid="uid://c82gabro1px5r" path="res://Assets/fire_rune.png" id="5_v7il5"]
-[ext_resource type="Texture2D" uid="uid://bynyj1vlggpur" path="res://Assets/water_rune.png" id="6_3j384"]
+[ext_resource type="Texture2D" uid="uid://b0qf2rgfljtqm" path="res://Assets/air_rune.png" id="1_654q6"]
+[ext_resource type="Script" path="res://Scripts/Air Button.gd" id="2_360j4"]
+[ext_resource type="Texture2D" uid="uid://8g00j0b37so" path="res://Assets/earth_rune.png" id="3_ota81"]
+[ext_resource type="Texture2D" uid="uid://c82gabro1px5r" path="res://Assets/fire_rune.png" id="4_1ldy4"]
+[ext_resource type="Texture2D" uid="uid://bynyj1vlggpur" path="res://Assets/water_rune.png" id="5_j5m6j"]
 
 [sub_resource type="Theme" id="Theme_wklv6"]
 
@@ -15,30 +12,20 @@
 
 [sub_resource type="Theme" id="Theme_lkq7e"]
 
-[node name="Level 1" type="Node2D"]
+[node name="CookingUI" type="CanvasLayer"]
 
-[node name="Interactable" parent="." instance=ExtResource("2_w5cbi")]
-position = Vector2(880, 170)
-
-[node name="UI" parent="." instance=ExtResource("2_pgxrt")]
-
-[node name="Fire" parent="." instance=ExtResource("3_vbv3g")]
-position = Vector2(596, 490)
-
-[node name="CookingUI" type="CanvasLayer" parent="."]
-
-[node name="CookingUI" type="HBoxContainer" parent="CookingUI"]
+[node name="CookingUI" type="HBoxContainer" parent="."]
 offset_left = 400.0
 offset_top = 36.0
 offset_right = 790.775
 offset_bottom = 638.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CookingUI/CookingUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CookingUI"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Air Button" type="CheckBox" parent="CookingUI/CookingUI/VBoxContainer"]
+[node name="Air Button" type="CheckBox" parent="CookingUI/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Water Button")
@@ -46,12 +33,12 @@ focus_neighbor_right = NodePath("../../VBoxContainer2/Cook Button")
 focus_neighbor_bottom = NodePath("../Earth Button")
 focus_next = NodePath("../Earth Button")
 focus_previous = NodePath("../Water Button")
-icon = ExtResource("3_frdrl")
+icon = ExtResource("1_654q6")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("5_l2xqj")
+script = ExtResource("2_360j4")
 
-[node name="Earth Button" type="CheckBox" parent="CookingUI/CookingUI/VBoxContainer"]
+[node name="Earth Button" type="CheckBox" parent="CookingUI/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Air Button")
@@ -59,11 +46,11 @@ focus_neighbor_right = NodePath("../../VBoxContainer2/Cook Button")
 focus_neighbor_bottom = NodePath("../Fire Button")
 focus_next = NodePath("../Fire Button")
 focus_previous = NodePath("../Air Button")
-icon = ExtResource("4_o838h")
+icon = ExtResource("3_ota81")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Fire Button" type="CheckBox" parent="CookingUI/CookingUI/VBoxContainer"]
+[node name="Fire Button" type="CheckBox" parent="CookingUI/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Earth Button")
@@ -71,11 +58,11 @@ focus_neighbor_right = NodePath("../../VBoxContainer2/Exit Button")
 focus_neighbor_bottom = NodePath("../Water Button")
 focus_next = NodePath("../Water Button")
 focus_previous = NodePath("../Earth Button")
-icon = ExtResource("5_v7il5")
+icon = ExtResource("4_1ldy4")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Water Button" type="CheckBox" parent="CookingUI/CookingUI/VBoxContainer"]
+[node name="Water Button" type="CheckBox" parent="CookingUI/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Fire Button")
@@ -83,20 +70,20 @@ focus_neighbor_right = NodePath("../../VBoxContainer2/Exit Button")
 focus_neighbor_bottom = NodePath("../Air Button")
 focus_next = NodePath("../../VBoxContainer2/Cook Button")
 focus_previous = NodePath("../Fire Button")
-icon = ExtResource("6_3j384")
+icon = ExtResource("5_j5m6j")
 icon_alignment = 1
 expand_icon = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CookingUI/CookingUI"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CookingUI"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Spacer" type="Control" parent="CookingUI/CookingUI/VBoxContainer2"]
+[node name="Spacer" type="Control" parent="CookingUI/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Cook Button" type="Button" parent="CookingUI/CookingUI/VBoxContainer2"]
+[node name="Cook Button" type="Button" parent="CookingUI/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../../VBoxContainer/Earth Button")
@@ -109,7 +96,7 @@ theme_override_font_sizes/font_size = 42
 text = "COOK IT"
 icon = SubResource("ViewportTexture_e3his")
 
-[node name="Exit Button" type="Button" parent="CookingUI/CookingUI/VBoxContainer2"]
+[node name="Exit Button" type="Button" parent="CookingUI/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../../VBoxContainer/Fire Button")
@@ -122,6 +109,6 @@ theme_override_font_sizes/font_size = 42
 text = "Exit"
 icon = SubResource("ViewportTexture_e3his")
 
-[node name="Spacer2" type="Control" parent="CookingUI/CookingUI/VBoxContainer2"]
+[node name="Spacer2" type="Control" parent="CookingUI/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
