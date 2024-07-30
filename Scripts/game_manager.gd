@@ -47,3 +47,9 @@ func close_cooking_menu():
 	canvas_layer.visible = false
 	ui.visible = true
 	cooking_ui.visible = false
+	
+func wrong_answer():
+	var tween = get_tree().create_tween().set_trans(Tween.TRANS_BOUNCE)
+	tween.tween_property($CanvasLayer/ColorRect, "modulate", Color.RED, 0.1)
+	tween.tween_property($CanvasLayer/ColorRect, "modulate", Color.RED, 1)
+	tween.tween_property($CanvasLayer/ColorRect, "modulate", Color.from_string("2d2d2db4", Color.BLUE), 1)
