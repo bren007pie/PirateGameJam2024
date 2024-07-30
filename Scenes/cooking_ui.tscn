@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx1ho81iqf44f"]
+[gd_scene load_steps=10 format=3 uid="uid://dx1ho81iqf44f"]
 
 [ext_resource type="Texture2D" uid="uid://b0qf2rgfljtqm" path="res://Assets/air_rune.png" id="1_654q6"]
+[ext_resource type="Script" path="res://Scenes/cooking_ui.gd" id="1_y0dye"]
 [ext_resource type="Script" path="res://Scripts/Air Button.gd" id="2_360j4"]
 [ext_resource type="Texture2D" uid="uid://8g00j0b37so" path="res://Assets/earth_rune.png" id="3_ota81"]
 [ext_resource type="Texture2D" uid="uid://c82gabro1px5r" path="res://Assets/fire_rune.png" id="4_1ldy4"]
@@ -13,6 +14,7 @@
 [sub_resource type="Theme" id="Theme_lkq7e"]
 
 [node name="CookingUI" type="CanvasLayer"]
+script = ExtResource("1_y0dye")
 
 [node name="CookingUI" type="HBoxContainer" parent="."]
 offset_left = 400.0
