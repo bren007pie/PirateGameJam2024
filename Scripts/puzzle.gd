@@ -49,9 +49,6 @@ func _on_interactable_exited(interactable):
 func _on_interactable_interacted(interactable):
 	if interactable == self and puzzle_on:
 		GameManager.open_cooking_menu_for_puzzle(self)
-		#GameManager.add_rune("fire")
-		#puzzle_on = false
-		#$Sprite2D.modulate = Color.GREEN
 
 # runes is a dictionary of bools, bool is the result
 func evaluate_solution(runes : Dictionary) -> bool:
@@ -59,6 +56,7 @@ func evaluate_solution(runes : Dictionary) -> bool:
 		GameManager.close_cooking_menu()
 		GameManager.subtract_runes(runes_needed)
 		GameManager.add_runes(runes_rewarded)
+		puzzle_on = false # flag to turn off puzzle
 		return true # signaling for the function
 	else:
 		return false
