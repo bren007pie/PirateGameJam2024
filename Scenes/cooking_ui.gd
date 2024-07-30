@@ -21,7 +21,10 @@ func _on_cook_button_pressed():
 	runes["earth"] = earth_button.button_pressed
 	runes["fire"] = fire_button.button_pressed
 	runes["water"] = water_button.button_pressed
-	result = puzzle.evaluate_solution(runes)
+	if GameManager.check_rune_availability(runes):
+		result = puzzle.evaluate_solution(runes)
+	else:
+		result = false
 	check_result()
 
 func check_result():

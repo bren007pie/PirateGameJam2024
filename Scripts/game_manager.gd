@@ -74,3 +74,10 @@ func wrong_answer():
 	tween.tween_property($CanvasLayer/ColorRect, "modulate", Color.RED, 0.1)
 	tween.tween_property($CanvasLayer/ColorRect, "modulate", Color.RED, 1)
 	tween.tween_property($CanvasLayer/ColorRect, "modulate", Color.from_string("2d2d2db4", Color.BLUE), 1)
+
+func check_rune_availability(runes_checking : Dictionary) -> bool:
+	var result = true
+	for key in runes_checking:
+		if runes.has(key) and runes[key] - runes_checking[key] < 0:
+			result = false
+	return result
