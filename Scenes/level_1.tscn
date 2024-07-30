@@ -9,4 +9,5 @@
 position = Vector2(880, 170)
 
 [node name="Fire" parent="." instance=ExtResource("3_vbv3g")]
-position = Vector2(596, 490)
+position = Vector2(597, 490)
+air_needed = false

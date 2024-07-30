@@ -27,6 +27,8 @@ func _on_interactable_exited(interactable):
 
 func _on_interactable_interacted(interactable):
 	if interactable == self:
+		# Interface for the puzzles be here.
+		# Puzzle script would go in here
 		print("I was interacted")
 		test_box.change_colour(1)
 	else:

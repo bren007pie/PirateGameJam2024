@@ -36,10 +36,12 @@ func _physics_process(delta):
 	if ray_cast_2d.is_colliding() and not interactable_detected:
 		interactable_detected = true
 		current_interactable = ray_cast_2d.get_collider()
+		# First detects interactable (first frame)
 		interactable_entered.emit(current_interactable)
 		print("detection emitted")
 	elif not ray_cast_2d.is_colliding() and interactable_detected:
 		interactable_detected = false
+		# Exited interactable (first frame when gone)
 		interactable_exited.emit(current_interactable)
 		current_interactable = null
 		print("undetection emitted")
@@ -47,4 +49,5 @@ func _physics_process(delta):
 func _unhandled_input(event):
 	if event.is_action_pressed("Interact"):
 		if current_interactable:
+			# When interact button pressed
 			interactable_interacted.emit(current_interactable)
