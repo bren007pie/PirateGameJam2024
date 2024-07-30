@@ -29,7 +29,7 @@ func subtract_rune(rune_name:String, amount : int = 1):
 	else:
 		print_debug("YOU SUBTRACTED MORE RUNES THAN YOU HAVE, YOU FILTHY FUCK!")
 
-func open_cooking_menu():
+func open_cooking_menu_for_puzzle(puzzle : Node):
 	is_cooking = true
 	get_tree().paused = true
 	canvas_layer.visible = true
