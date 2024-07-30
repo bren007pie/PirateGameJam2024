@@ -8,19 +8,43 @@
 [node name="Interactable" parent="." instance=ExtResource("2_w5cbi")]
 position = Vector2(880, 170)
 
-[node name="Fire" parent="." instance=ExtResource("3_vbv3g")]
+[node name="Puzzle 0 - Fire" parent="." instance=ExtResource("3_vbv3g")]
 position = Vector2(597, 490)
 
-[node name="Cooking Pot" parent="." instance=ExtResource("3_vbv3g")]
+[node name="Puzzle 1 - Cooking Pot" parent="." instance=ExtResource("3_vbv3g")]
 position = Vector2(864, 495)
 fire_needed = true
 air_given = true
 fire_given = false
 water_given = true
+quicksilver_given = true
 
-[node name="Windmill" parent="." instance=ExtResource("3_vbv3g")]
+[node name="Puzzle 2 - Windmill" parent="." instance=ExtResource("3_vbv3g")]
 position = Vector2(1096, 500)
 air_needed = true
-air_given = true
+earth_given = true
+fire_given = false
+quicksilver_given = true
+
+[node name="Puzzle 3 - Alcohol" parent="." instance=ExtResource("3_vbv3g")]
+position = Vector2(1315, 504)
+earth_needed = true
+water_needed = true
+water_given = true
+quicksilver_given = true
+
+[node name="Puzzle 4 - Vase" parent="." instance=ExtResource("3_vbv3g")]
+position = Vector2(1520, 508)
+fire_needed = true
+water_needed = true
+earth_given = true
 fire_given = false
 water_given = true
+quicksilver_given = true
+
+[node name="Puzzle 5 - Ink" parent="." instance=ExtResource("3_vbv3g")]
+position = Vector2(1738, 517)
+earth_needed = true
+water_needed = true
+fire_given = false
+quicksilver_given = true
