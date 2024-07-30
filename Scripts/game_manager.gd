@@ -16,6 +16,7 @@ var is_cooking : bool = false
 
 func _ready():
 	ui.startup()
+	
 
 func get_runes() -> Dictionary:
 	return runes
@@ -26,6 +27,12 @@ func get_rune(rune_name:String) -> int:
 func add_rune(rune_name:String, amount : int = 1):
 	runes[rune_name] += amount
 	runes_changed.emit()
+	
+func add_runes(runes_adding : Dictionary):
+	for key in runes:
+		if runes_adding.has(key): # gaurd for weird dictionaries
+			runes[key] += int(runes_adding[key])
+	runes_changed.emit()
 
 func subtract_rune(rune_name:String, amount : int = 1):
 	if runes[rune_name] - amount >= 0:
@@ -33,6 +40,15 @@ func subtract_rune(rune_name:String, amount : int = 1):
 		runes_changed.emit()
 	else:
 		print_debug("YOU SUBTRACTED MORE RUNES THAN YOU HAVE, YOU FILTHY FUCK!")
+
+func subtract_runes(runes_subtracting : Dictionary):
+	for key in runes:
+		if runes_subtracting.has(key): # gaurd for weird dictionaries
+			if runes[key] - int(runes_subtracting[key]) >= 0:
+				runes[key] -= int(runes_subtracting[key])
+			else:
+				print_debug("YOU SUBTRACTED MORE RUNES THAN YOU HAVE, YOU FILTHY FUCKS!")
+	runes_changed.emit()
 
 func open_cooking_menu_for_puzzle(puzzle : Node):
 	cooking_ui.update_puzzle(puzzle)

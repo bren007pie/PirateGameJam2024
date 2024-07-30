@@ -11,13 +11,23 @@ var puzzle_on : bool = true
 @export var fire_given : bool
 @export var water_given : bool
 @export var quicksilver_given : bool
-
+var runes_needed : Dictionary 
+var runes_rewarded : Dictionary 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Shabah.interactable_entered.connect(_on_interactable_entered)
 	Shabah.interactable_exited.connect(_on_interactable_exited)
 	Shabah.interactable_interacted.connect(_on_interactable_interacted)
+	runes_needed = {"air" : air_needed,
+				"earth" : earth_needed,
+			 	"fire" :  fire_needed,
+				"water" :  water_needed}
+	runes_rewarded = {"air" : air_given,
+				"earth" : earth_given,
+			 	"fire" :  fire_given,
+				"water" :  water_given,
+				"quicksilver" : quicksilver_given}
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,6 +53,14 @@ func _on_interactable_interacted(interactable):
 		#puzzle_on = false
 		#$Sprite2D.modulate = Color.GREEN
 
-
+# runes is a dictionary of bools, bool is the result
 func evaluate_solution(runes : Dictionary) -> bool:
-	return false
+	if runes == runes_needed:
+		GameManager.close_cooking_menu()
+		GameManager.subtract_runes(runes_needed)
+		GameManager.add_runes(runes_rewarded)
+		return true # signaling for the function
+	else:
+		return false
+	 
+
