@@ -78,6 +78,6 @@ func wrong_answer():
 func check_rune_availability(runes_checking : Dictionary) -> bool:
 	var result = true
 	for key in runes_checking:
-		if runes.has(key) and runes[key] - runes_checking[key] < 0:
+		if runes.has(key) and runes[key] - int(runes_checking[key]) < 0:
 			result = false
 	return result
