@@ -3,6 +3,8 @@ signal runes_changed
 var is_cooking : bool = false
 
 @onready var canvas_layer = $CanvasLayer
+@onready var ui = $UI
+@onready var cooking_ui = $CookingUI
 
 @onready var runes : Dictionary = {
 	"air" : 0,
@@ -11,6 +13,9 @@ var is_cooking : bool = false
 	"water" :  0,
 	"quicksilver" : 0
 }
+
+func _ready():
+	ui.startup()
 
 func get_runes() -> Dictionary:
 	return runes
@@ -33,8 +38,12 @@ func open_cooking_menu_for_puzzle(puzzle : Node):
 	is_cooking = true
 	get_tree().paused = true
 	canvas_layer.visible = true
+	ui.visible = false
+	cooking_ui.visible = true
 	
 func close_cooking_menu():
 	is_cooking = false
 	get_tree().paused = false
 	canvas_layer.visible = false
+	ui.visible = true
+	cooking_ui.visible = false

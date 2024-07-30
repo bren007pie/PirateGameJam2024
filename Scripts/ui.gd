@@ -13,6 +13,8 @@ extends CanvasLayer
 
 func _ready():
 	print("HELLO I EXIST") 
+
+func startup():
 	GameManager.runes_changed.connect(_on_runes_changed) # connected signal
 	_on_runes_changed()
 
