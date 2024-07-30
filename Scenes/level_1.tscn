@@ -10,3 +10,17 @@ position = Vector2(880, 170)
 
 [node name="Fire" parent="." instance=ExtResource("3_vbv3g")]
 position = Vector2(597, 490)
+
+[node name="Cooking Pot" parent="." instance=ExtResource("3_vbv3g")]
+position = Vector2(864, 495)
+fire_needed = true
+air_given = true
+fire_given = false
+water_given = true
+
+[node name="Windmill" parent="." instance=ExtResource("3_vbv3g")]
+position = Vector2(1096, 500)
+air_needed = true
+air_given = true
+fire_given = false
+water_given = true
