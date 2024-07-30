@@ -13,6 +13,8 @@ var puzzle_on : bool = true
 @export var quicksilver_given : bool
 var runes_needed : Dictionary 
 var runes_rewarded : Dictionary 
+@onready var sprite_2d = $Sprite2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,12 +40,16 @@ func _process(delta):
 func _on_interactable_entered(interactable):
 	# Gaurd to make sure it's only when Shabah is interacting with itself
 	if interactable == self: 
-		pass
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_parallel()
+		tween.tween_property(sprite_2d, "modulate", Color(1.5,1.5,1.5), .25)
+		tween.tween_property(sprite_2d, "scale", Vector2(1.2,1.2), 0.25)
 
 # For when Shabah stops looking at the puzzle
 func _on_interactable_exited(interactable):
 	if interactable == self:
-		pass
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_parallel()
+		tween.tween_property(sprite_2d, "modulate", Color(1,1,1), .25)
+		tween.tween_property(sprite_2d, "scale", Vector2(1,1), 0.25)
 
 # Press puzzle/interact button
 func _on_interactable_interacted(interactable):

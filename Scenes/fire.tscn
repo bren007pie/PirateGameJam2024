@@ -12,7 +12,6 @@ script = ExtResource("1_oiat7")
 fire_given = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
 texture = ExtResource("1_iwqat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
