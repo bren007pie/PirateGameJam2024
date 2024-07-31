@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://bbkcwlvu0p385" path="res://Assets/Shabah.png" id="2_dhacn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hkgqt"]
-radius = 94.8947
+radius = 40.0
 
 [node name="Shabah" type="CharacterBody2D"]
 z_index = 3
 script = ExtResource("1_674oa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.216433, 0.216433)
 texture = ExtResource("2_dhacn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const ACCL = 900.0
-const MAX_SPEED = 300.0
+const ACCL = 1200.0
+const MAX_SPEED = 500.0
 @onready var ray_cast_2d = $RayCast2D
 @onready var sprite_2d = $Sprite2D
 
@@ -13,11 +13,22 @@ signal interactable_entered(interactable)
 signal interactable_exited(interactable)
 signal interactable_interacted(interactable)
 
+var facing_left = false
+var direction
+
+@onready var jiggle_tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_loops()
+
+func _ready():
+	jiggle_tween.bind_node(self)
+	jiggle_tween.tween_property(sprite_2d, "rotation_degrees", 8, 0.2)
+	jiggle_tween.tween_property(sprite_2d, "rotation_degrees", -8, 0.2)
+	jiggle_tween.pause()
+
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
-	var direction = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Up", "Down"))
+	direction = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Up", "Down"))
 	if direction.length_squared() == 0:
 		velocity = Vector2.ZERO
 	else:
@@ -27,9 +38,13 @@ func _physics_process(delta):
 		velocity = velocity.normalized()*MAX_SPEED
 	
 	if velocity.length():
-		sprite_2d.rotation = velocity.angle()
+		jiggle_tween.play()
+		update_sprite()
+	else:
+		jiggle_tween.pause()
 	
-	ray_cast_2d.rotation = sprite_2d.rotation - deg_to_rad(90)
+	if direction.length_squared() > 0:
+		ray_cast_2d.rotation = direction.angle() - deg_to_rad(90)
 	
 	move_and_slide()
 	
@@ -45,6 +60,17 @@ func _physics_process(delta):
 		interactable_exited.emit(current_interactable)
 		current_interactable = null
 		print("undetection emitted")
+
+func update_sprite():
+	if direction.x < 0 and facing_left == false:
+		facing_left = true
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
+		tween.tween_property(sprite_2d, "scale", Vector2(-1,1), .5)
+	elif direction.x > 0 and facing_left == true:
+		facing_left = false
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
+		tween.tween_property(sprite_2d, "scale", Vector2(1,1), .5)
+
 
 func _unhandled_input(event):
 	if event.is_action_pressed("Interact"):
