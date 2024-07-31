@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgi43j6pagh1o"]
+
+[ext_resource type="Script" path="res://Scripts/Main_Main.gd" id="1_7yr4d"]
+
+[sub_resource type="Theme" id="Theme_fcu1x"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ygdj1"]
+
+[sub_resource type="Theme" id="Theme_ey6rg"]
+
+[node name="MainMain" type="CanvasLayer"]
+script = ExtResource("1_7yr4d")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 225.0
+offset_top = -27.0
+offset_right = 1010.0
+offset_bottom = 249.0
+theme_override_font_sizes/normal_font_size = 200
+text = "Keemia"
+
+[node name="Main Menu UI" type="HBoxContainer" parent="."]
+visible = false
+offset_left = 441.0
+offset_top = 245.0
+offset_right = 703.0
+offset_bottom = 635.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Main Menu UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Play Button" type="Button" parent="Main Menu UI/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Credits Button")
+focus_neighbor_bottom = NodePath("../Credits Button")
+focus_next = NodePath("../Credits Button")
+theme = SubResource("Theme_fcu1x")
+theme_override_font_sizes/font_size = 42
+text = "Play"
+icon = SubResource("ViewportTexture_ygdj1")
+
+[node name="Controls Button2" type="Button" parent="Main Menu UI/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Credits Button")
+focus_neighbor_bottom = NodePath("../Credits Button")
+focus_next = NodePath("../Credits Button")
+theme = SubResource("Theme_fcu1x")
+theme_override_font_sizes/font_size = 42
+text = "Controls"
+icon = SubResource("ViewportTexture_ygdj1")
+
+[node name="Credits Button" type="Button" parent="Main Menu UI/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Play Button")
+focus_neighbor_bottom = NodePath("../Play Button")
+focus_previous = NodePath("../Play Button")
+theme = SubResource("Theme_ey6rg")
+theme_override_font_sizes/font_size = 42
+text = "Credits"
+icon = SubResource("ViewportTexture_ygdj1")
+
+[node name="Exit Button" type="Button" parent="Main Menu UI/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Play Button")
+focus_neighbor_bottom = NodePath("../Play Button")
+focus_previous = NodePath("../Play Button")
+theme = SubResource("Theme_ey6rg")
+theme_override_font_sizes/font_size = 42
+text = "Exit"
+icon = SubResource("ViewportTexture_ygdj1")
+
+[node name="Controls Button" type="HBoxContainer" parent="."]
+offset_left = 441.0
+offset_top = 538.0
+offset_right = 703.0
+offset_bottom = 635.0
+
+[node name="Label" type="Label" parent="Controls Button"]
+layout_mode = 2
+text = "Keyboard/mouse:
+Move . . . . . . . . WASD
+Aim  . . . . . . . . Mouse
+Jump . . . . . . . . Space
+Shoot . . . . . . . . Left Mouse Click
+Recall . . . . . . . . Q
+Switch character . . E
+Restart . . . . . . . . L
+Pause . . . . . . . . Escape"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Controls Button"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Back Button" type="Button" parent="Controls Button/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ey6rg")
+theme_override_font_sizes/font_size = 42
+text = "Exit"
+icon = SubResource("ViewportTexture_ygdj1")
+
+[connection signal="pressed" from="Main Menu UI/VBoxContainer2/Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Main Menu UI/VBoxContainer2/Controls Button2" to="." method="_on_controls_button_2_pressed"]
+[connection signal="pressed" from="Main Menu UI/VBoxContainer2/Credits Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Main Menu UI/VBoxContainer2/Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Controls Button/VBoxContainer2/Back Button" to="." method="_on_exit_button_pressed"]
