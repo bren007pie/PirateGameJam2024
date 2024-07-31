@@ -40,6 +40,7 @@ func _physics_process(delta):
 	if velocity.length():
 		jiggle_tween.play()
 		update_sprite()
+		jiggle_tween.set_speed_scale(velocity.length()/MAX_SPEED)
 	else:
 		jiggle_tween.pause()
 	

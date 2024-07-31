@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bivkfo260wrbm"
-path="res://.godot/imported/quicksilver.png-b51ce69bd84f989abb3c28c676c968d8.ctex"
+uid="uid://q5c5efb8jve3"
+path="res://.godot/imported/earth.png-418cc5baad68a5969c247f8afe5bbdcf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/quicksilver.png"
-dest_files=["res://.godot/imported/quicksilver.png-b51ce69bd84f989abb3c28c676c968d8.ctex"]
+source_file="res://Assets/earth.png"
+dest_files=["res://.godot/imported/earth.png-418cc5baad68a5969c247f8afe5bbdcf.ctex"]
 
 [params]
 

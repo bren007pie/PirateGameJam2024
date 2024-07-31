@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://dx1ho81iqf44f"]
 
-[ext_resource type="Texture2D" uid="uid://b0qf2rgfljtqm" path="res://Assets/air_rune.png" id="1_654q6"]
 [ext_resource type="Script" path="res://Scenes/cooking_ui.gd" id="1_y0dye"]
 [ext_resource type="Script" path="res://Scripts/Air Button.gd" id="2_360j4"]
-[ext_resource type="Texture2D" uid="uid://8g00j0b37so" path="res://Assets/earth_rune.png" id="3_ota81"]
-[ext_resource type="Texture2D" uid="uid://c82gabro1px5r" path="res://Assets/fire_rune.png" id="4_1ldy4"]
-[ext_resource type="Texture2D" uid="uid://bynyj1vlggpur" path="res://Assets/water_rune.png" id="5_j5m6j"]
+[ext_resource type="Texture2D" uid="uid://d0enrn5ln7osu" path="res://Assets/air.png" id="2_m1s6y"]
+[ext_resource type="Texture2D" uid="uid://q5c5efb8jve3" path="res://Assets/earth.png" id="4_r5osa"]
+[ext_resource type="Texture2D" uid="uid://bhsludcjaextr" path="res://Assets/fire.png" id="5_m77be"]
+[ext_resource type="Texture2D" uid="uid://m0la0gji6cmu" path="res://Assets/water.png" id="6_p8ypn"]
 
 [sub_resource type="Theme" id="Theme_wklv6"]
 
@@ -18,9 +18,9 @@ script = ExtResource("1_y0dye")
 
 [node name="CookingUI" type="HBoxContainer" parent="."]
 offset_left = 400.0
-offset_top = 36.0
+offset_top = 24.0
 offset_right = 790.775
-offset_bottom = 638.0
+offset_bottom = 626.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CookingUI"]
 layout_mode = 2
@@ -35,7 +35,7 @@ focus_neighbor_right = NodePath("../../VBoxContainer2/Cook Button")
 focus_neighbor_bottom = NodePath("../Earth Button")
 focus_next = NodePath("../Earth Button")
 focus_previous = NodePath("../Water Button")
-icon = ExtResource("1_654q6")
+icon = ExtResource("2_m1s6y")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_360j4")
@@ -48,7 +48,7 @@ focus_neighbor_right = NodePath("../../VBoxContainer2/Cook Button")
 focus_neighbor_bottom = NodePath("../Fire Button")
 focus_next = NodePath("../Fire Button")
 focus_previous = NodePath("../Air Button")
-icon = ExtResource("3_ota81")
+icon = ExtResource("4_r5osa")
 icon_alignment = 1
 expand_icon = true
 
@@ -60,7 +60,7 @@ focus_neighbor_right = NodePath("../../VBoxContainer2/Exit Button")
 focus_neighbor_bottom = NodePath("../Water Button")
 focus_next = NodePath("../Water Button")
 focus_previous = NodePath("../Earth Button")
-icon = ExtResource("4_1ldy4")
+icon = ExtResource("5_m77be")
 icon_alignment = 1
 expand_icon = true
 
@@ -72,7 +72,7 @@ focus_neighbor_right = NodePath("../../VBoxContainer2/Exit Button")
 focus_neighbor_bottom = NodePath("../Air Button")
 focus_next = NodePath("../../VBoxContainer2/Cook Button")
 focus_previous = NodePath("../Fire Button")
-icon = ExtResource("5_j5m6j")
+icon = ExtResource("6_p8ypn")
 icon_alignment = 1
 expand_icon = true
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://wgeh665g7gkn"]
 
-[ext_resource type="Texture2D" uid="uid://bivkfo260wrbm" path="res://Assets/Quicksilver.png" id="1_0oqsj"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_ue502"]
-[ext_resource type="Texture2D" uid="uid://b0qf2rgfljtqm" path="res://Assets/air_rune.png" id="2_ihd61"]
-[ext_resource type="Texture2D" uid="uid://8g00j0b37so" path="res://Assets/earth_rune.png" id="3_q8f6h"]
-[ext_resource type="Texture2D" uid="uid://c82gabro1px5r" path="res://Assets/fire_rune.png" id="4_cb0o7"]
-[ext_resource type="Texture2D" uid="uid://bynyj1vlggpur" path="res://Assets/water_rune.png" id="5_vifwo"]
+[ext_resource type="Texture2D" uid="uid://bivkfo260wrbm" path="res://Assets/quicksilver.png" id="2_4ehmf"]
+[ext_resource type="Texture2D" uid="uid://d0enrn5ln7osu" path="res://Assets/air.png" id="3_okuit"]
+[ext_resource type="Texture2D" uid="uid://q5c5efb8jve3" path="res://Assets/earth.png" id="4_fqwy6"]
+[ext_resource type="Texture2D" uid="uid://bhsludcjaextr" path="res://Assets/fire.png" id="5_k3y4j"]
+[ext_resource type="Texture2D" uid="uid://m0la0gji6cmu" path="res://Assets/water.png" id="6_fj08h"]
 
 [sub_resource type="Theme" id="Theme_xq02q"]
 Label/font_sizes/font_size = 80
@@ -22,7 +22,7 @@ layout_mode = 2
 
 [node name="QuickSilver Texture" type="TextureRect" parent="VBoxContainer/QuickSilver Container"]
 layout_mode = 2
-texture = ExtResource("1_0oqsj")
+texture = ExtResource("2_4ehmf")
 expand_mode = 3
 
 [node name="QuickSilver Text" type="Label" parent="VBoxContainer/QuickSilver Container"]
@@ -36,7 +36,7 @@ layout_mode = 2
 
 [node name="Air Texture" type="TextureRect" parent="VBoxContainer/Air Container"]
 layout_mode = 2
-texture = ExtResource("2_ihd61")
+texture = ExtResource("3_okuit")
 expand_mode = 3
 
 [node name="Air Text" type="Label" parent="VBoxContainer/Air Container"]
@@ -50,7 +50,7 @@ layout_mode = 2
 
 [node name="Earth Texture" type="TextureRect" parent="VBoxContainer/Earth Container"]
 layout_mode = 2
-texture = ExtResource("3_q8f6h")
+texture = ExtResource("4_fqwy6")
 expand_mode = 3
 
 [node name="Earth Text" type="Label" parent="VBoxContainer/Earth Container"]
@@ -64,7 +64,7 @@ layout_mode = 2
 
 [node name="Fire Texture" type="TextureRect" parent="VBoxContainer/Fire Container"]
 layout_mode = 2
-texture = ExtResource("4_cb0o7")
+texture = ExtResource("5_k3y4j")
 expand_mode = 3
 
 [node name="Fire Text" type="Label" parent="VBoxContainer/Fire Container"]
@@ -78,7 +78,7 @@ layout_mode = 2
 
 [node name="Water Texture" type="TextureRect" parent="VBoxContainer/Water Container"]
 layout_mode = 2
-texture = ExtResource("5_vifwo")
+texture = ExtResource("6_fj08h")
 expand_mode = 3
 
 [node name="Water Text" type="Label" parent="VBoxContainer/Water Container"]
