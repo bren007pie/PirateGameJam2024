@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnj8w22ygbj1r"]
+[gd_scene load_steps=9 format=3 uid="uid://cnj8w22ygbj1r"]
 
 [ext_resource type="PackedScene" uid="uid://d2crj8kvcoqtm" path="res://Scenes/interactable.tscn" id="2_w5cbi"]
+[ext_resource type="Texture2D" uid="uid://h0jfbput5ulx" path="res://Assets/firepitt.png" id="3_1t0yt"]
 [ext_resource type="PackedScene" uid="uid://boqa40vxjpaw3" path="res://Scenes/fire.tscn" id="3_vbv3g"]
+[ext_resource type="Texture2D" uid="uid://dpwtwfadrv22g" path="res://Assets/cooking.png" id="4_4cqv8"]
+[ext_resource type="Texture2D" uid="uid://ntwe48edmj" path="res://Assets/cooking_pot_hot.png" id="5_n7lm2"]
+[ext_resource type="Texture2D" uid="uid://cxv1scjswxvyw" path="res://Assets/windmill.png" id="6_gkfv7"]
+[ext_resource type="Texture2D" uid="uid://3ygt7xgf4n5g" path="res://Assets/barrel.png" id="7_buant"]
+[ext_resource type="Texture2D" uid="uid://4ohydx8d0bmt" path="res://Assets/ink.png" id="8_cxlh3"]
 
 [node name="Level 1" type="Node2D"]
 
@@ -10,6 +16,8 @@ position = Vector2(880, 170)
 
 [node name="Puzzle 0 - Fire" parent="." instance=ExtResource("3_vbv3g")]
 position = Vector2(597, 490)
+base = ExtResource("3_1t0yt")
+solved = ExtResource("3_1t0yt")
 
 [node name="Puzzle 1 - Cooking Pot" parent="." instance=ExtResource("3_vbv3g")]
 position = Vector2(864, 495)
@@ -18,6 +26,8 @@ air_given = true
 fire_given = false
 water_given = true
 quicksilver_given = true
+base = ExtResource("4_4cqv8")
+solved = ExtResource("5_n7lm2")
 
 [node name="Puzzle 2 - Windmill" parent="." instance=ExtResource("3_vbv3g")]
 position = Vector2(1096, 500)
@@ -25,6 +35,8 @@ air_needed = true
 earth_given = true
 fire_given = false
 quicksilver_given = true
+base = ExtResource("6_gkfv7")
+solved = ExtResource("6_gkfv7")
 
 [node name="Puzzle 3 - Alcohol" parent="." instance=ExtResource("3_vbv3g")]
 position = Vector2(1315, 504)
@@ -32,6 +44,8 @@ earth_needed = true
 water_needed = true
 water_given = true
 quicksilver_given = true
+base = ExtResource("7_buant")
+solved = ExtResource("7_buant")
 
 [node name="Puzzle 4 - Vase" parent="." instance=ExtResource("3_vbv3g")]
 position = Vector2(1520, 508)
@@ -48,3 +62,5 @@ earth_needed = true
 water_needed = true
 fire_given = false
 quicksilver_given = true
+base = ExtResource("8_cxlh3")
+solved = ExtResource("8_cxlh3")
